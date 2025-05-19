@@ -15,7 +15,7 @@
           }
       
           .merroonsoft .logo img {
-            height: 60px; /* Adjust height for header */
+            height: 50px; 
           }
         
         .hero-bg {
@@ -162,17 +162,6 @@
             box-shadow: 0 20px 25px rgba(138, 43, 226, 0.1);
         }
         
-        .portfolio-item {
-            transition: all 0.3s ease;
-            background: rgba(15, 23, 42, 0.3);
-            border: 1px solid rgba(138, 43, 226, 0.1);
-        }
-        
-        .portfolio-item:hover {
-            background: rgba(15, 23, 42, 0.6);
-            border: 1px solid rgba(138, 43, 226, 0.3);
-        }
-        
         .contact-input {
             background: rgba(15, 23, 42, 0.3);
             border: 1px solid rgba(138, 43, 226, 0.1);
@@ -241,3 +230,322 @@
         max-width: 100%;
         height: auto;
 }
+@keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+        }
+       
+        .floating {
+            animation: float 6s ease-in-out infinite;
+        }
+        .gradient-text {
+            background: linear-gradient(90deg, #2563eb, #7c3aed, #db2777);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+        .service-card {
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            border-left: 4px solid transparent;
+            animation: fadeIn 0.6s ease-out forwards;
+            opacity: 0;
+        }
+        .service-card:hover {
+            transform: translateY(-8px) scale(1.02);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+            border-left: 4px solid #6366f1;
+        }
+        .tech-bubble {
+            transition: all 0.3s ease;
+        }
+        .tech-bubble:hover {
+            transform: scale(1.1) rotate(5deg);
+        }
+        .pulse {
+            animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+        }
+        .glow-button {
+            animation: glow 2s infinite;
+        }
+        .story-image {
+            clip-path: polygon(0 0, 100% 0, 80% 100%, 0% 100%);
+        }
+        .delay-100 { animation-delay: 0.1s; }
+        .delay-200 { animation-delay: 0.2s; }
+        .delay-300 { animation-delay: 0.3s; }
+        .delay-400 { animation-delay: 0.4s; }
+        .delay-500 { animation-delay: 0.5s; }
+        .delay-600 { animation-delay: 0.6s; }
+        
+          /* Custom animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        @keyframes float {
+            0%, 100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-15px);
+            }
+        }
+        
+        .animate-fadeInUp {
+            animation: fadeInUp 0.8s cubic-bezier(0.22, 0.61, 0.36, 1) forwards;
+        }
+        
+        .animate-float {
+            animation: float 6s ease-in-out infinite;
+        }
+        
+        /* Background */
+        body {
+            background-color: #0a0a0a;
+            overflow-x: hidden;
+            position: relative;
+        }
+        
+        /* Project cards */
+        .project-card {
+            transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+            transform: perspective(1000px) rotateX(0deg) rotateY(0deg) scale(1);
+            box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.05);
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
+            backdrop-filter: blur(10px);
+            background: rgba(20, 20, 20, 0.6);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+        }
+        
+        .project-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(255,255,255,0.03) 0%, rgba(255,255,255,0) 100%);
+            z-index: -1;
+        }
+        
+        .project-card:hover {
+            transform: perspective(1000px) rotateX(0deg) rotateY(0deg) scale(1.03);
+            box-shadow: 0 0 30px rgba(99, 102, 241, 0.3);
+            border-color: rgba(99, 102, 241, 0.3);
+        }
+        
+        .project-card::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(45deg, transparent 0%, rgba(99, 102, 241, 0.05) 100%);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+        
+        .project-card:hover::after {
+            opacity: 1;
+        }
+        
+        .gradient-text {
+            background: linear-gradient(90deg, #8b5cf6, #3b82f6);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+        
+        /* Glass effect */
+        .glass {
+            background: rgba(15, 15, 15, 0.7);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+        }
+        
+        /* Custom scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        
+        ::-webkit-scrollbar-track {
+            background: #111;
+        }
+        
+        ::-webkit-scrollbar-thumb {
+            background: linear-gradient(90deg, #8b5cf6, #3b82f6);
+            border-radius: 10px;
+        }
+        
+        /* Filter buttons */
+        .filter-btn {
+            transition: all 0.3s ease;
+            position: relative;
+            background: rgba(30, 30, 30, 0.6);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+        }
+        
+        .filter-btn::after {
+            content: '';
+            position: absolute;
+            bottom: -1px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: linear-gradient(90deg, #8b5cf6, #3b82f6);
+            transition: width 0.3s ease;
+        }
+        
+        .filter-btn:hover, .filter-btn.active {
+            border-color: rgba(99, 102, 241, 0.3);
+        }
+        
+        .filter-btn:hover::after, .filter-btn.active::after {
+            width: 100%;
+        }
+        
+        .filter-btn.active {
+            background: rgba(99, 102, 241, 0.1);
+        }
+        
+        /* Tag styling */
+        .project-tag {
+            background: rgba(99, 102, 241, 0.1);
+            border: 1px solid rgba(99, 102, 241, 0.2);
+            backdrop-filter: blur(5px);
+        }
+        
+        /* Floating elements */
+        .floating-element {
+            position: absolute;
+            border-radius: 50%;
+            filter: blur(40px);
+            opacity: 0.2;
+            z-index: -1;
+        }
+     @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .testimonial-card {
+            transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+            animation: fadeIn 0.6s ease-out forwards;
+            opacity: 0;
+        }
+        
+        .testimonial-card:nth-child(1) { animation-delay: 0.1s; }
+        .testimonial-card:nth-child(2) { animation-delay: 0.2s; }
+        .testimonial-card:nth-child(3) { animation-delay: 0.3s; }
+        .testimonial-card:nth-child(4) { animation-delay: 0.4s; }
+        .testimonial-card:nth-child(5) { animation-delay: 0.5s; }
+        
+        .testimonial-card:hover {
+            transform: translateY(-8px) scale(1.02);
+            box-shadow: 0 25px 50px -12px rgba(124, 58, 237, 0.25);
+        }
+        
+        .quote-icon {
+            opacity: 0.08;
+            font-size: 6rem;
+            position: absolute;
+            top: 10px;
+            right: 20px;
+            z-index: 0;
+            color: #8b5cf6;
+        }
+        
+        .client-photo {
+            width: 56px;
+            height: 56px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid #7c3aed;
+            transition: all 0.3s ease;
+        }
+        
+        .testimonial-card:hover .client-photo {
+            transform: scale(1.1);
+            border-color: #a78bfa;
+        }
+        
+        .gradient-text {
+            background: linear-gradient(90deg, #8b5cf6, #ec4899);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+        
+        /* Vertical slider styles */
+        .testimonial-slider {
+            max-width: 800px;
+            margin: 0 auto;
+            position: relative;
+        }
+        
+        .slider-controls {
+            position: absolute;
+            right: 0;
+            top: -70px;
+        }
+        
+        .slider-btn {
+            background: rgba(124, 58, 237, 0.2);
+            border: none;
+            color: #8b5cf6;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            margin-left: 10px;
+        }
+        
+        .slider-btn:hover {
+            background: rgba(124, 58, 237, 0.4);
+            transform: scale(1.1);
+        }
+        
+        .testimonial-slide {
+            display: none;
+            transition: all 0.5s ease;
+        }
+        
+        .testimonial-slide.active {
+            display: block;
+            animation: fadeIn 0.6s ease-out;
+        }
+        
+        .progress-bar {
+            height: 4px;
+            background: rgba(124, 58, 237, 0.2);
+            margin-top: 20px;
+            position: relative;
+        }
+        
+        .progress {
+            height: 100%;
+            background: linear-gradient(90deg, #8b5cf6, #ec4899);
+            width: 20%;
+            transition: width 0.3s ease;
+        }
